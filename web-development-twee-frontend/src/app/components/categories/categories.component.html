@@ -1,0 +1,27 @@
+<div class="container">
+
+    <app-navigation></app-navigation>
+
+    <h1>Product page</h1>
+    <p>Here you can find all the products</p>
+    <h2>Categories</h2>
+    <button *ngFor="let category of categories" (click)="showProductsByCategory(category.id)" type="button" class="btn btn-secondary"> {{ category.name }}</button>
+    <button (click)="showAllProducts()" type="button" class="btn btn-secondary">All</button>
+    <h2>Products</h2>
+    <button (click)="sortProductsByPriceLowestToHighest()" class="btn btn-secondary">lowest - highest</button>
+    <button (click)="sortProductsByPriceHighestToLowest()" class="btn btn-secondary">highest - lowest</button>
+
+    <br>
+
+    <div *ngFor="let product of products" class="product">
+        <h3><b>{{ product.name }}</b></h3>
+        <p>{{ product.description }}</p>
+        <p>{{ product.price }} dollars</p>
+        <input type="number" [(ngModel)]="quantity">
+
+        <br>
+
+        <button (click)="buyProduct(product.id, product.seller_id)" class="btn btn-primary">Buy</button>
+
+</div>
+

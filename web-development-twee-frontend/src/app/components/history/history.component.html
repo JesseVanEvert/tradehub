@@ -1,0 +1,13 @@
+<div class="container">
+    <app-navigation></app-navigation>
+    <h1>History page</h1>
+    <p>Here you can find all the products you sold</p>
+    <h2>Products</h2>
+    <div *ngFor="let soldProduct of soldProducts" class="product">
+        <h3>Name: {{ soldProduct.name }}</h3>
+        <p>Description: {{ soldProduct.description }}</p>
+        <p>Price: {{ soldProduct.price }} dollars</p>
+        <p>Sold to: {{ soldProduct.buyer_name }}</p>
+        <p>Quantity sold: {{ soldProduct.quantity_bought }}</p>
+        <p>Sold at: {{ soldProduct.created_at}}</p>
+</div>

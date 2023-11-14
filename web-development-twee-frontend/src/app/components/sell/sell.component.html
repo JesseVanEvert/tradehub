@@ -1,0 +1,44 @@
+<div class="container">
+    <app-navigation></app-navigation>
+
+    <h1>Sell page</h1>
+    <p>Here you can sell your products</p>
+    <h2>Product</h2>
+
+    <form id="sellForm">
+        <div class="form-group">
+            <label for="category">Category: </label>
+            <select (change)="updateCategoryId($event)" class="form-control">
+                <option *ngFor="let category of categories" [value]="category.id">{{ category.name }}</option>
+            </select>
+         </div>
+
+         <div class="form-group">
+            <label for="newCategory">New category: </label>
+            <input type="text" name="newCategory" [(ngModel)]="newCategory.name" placeholder="IT" class="form-control">
+            <button type="submit" (click)="storeCategory()" class="btn btn-primary">Create</button>
+        </div>
+
+         <div class="form-group">
+            <label for="name">Name: </label>
+            <input type="text" name="name" [(ngModel)]="product.name" placeholder="Iphone 8" class="form-control">
+        </div>
+
+        <div class="form-group">
+            <label for="description">Description: </label>
+            <input type="text" name="description" [(ngModel)]="product.description" placeholder="A product made by apple" class="form-control">
+        </div>
+
+        <div class="form-group">
+            <label for="price">Price: </label>
+            <input type="number" name="price" [(ngModel)]="product.price" placeholder="300" class="form-control">
+        </div>
+        
+        <div class="form-group">
+            <label for="quantity">Quantity: </label>
+            <input type="number" name="quantity" [(ngModel)]="product.quantity_listed" placeholder="0" class="form-control">
+        </div>
+        
+        <button type="submit" (click)="storeProduct()" class="btn btn-primary">Sell</button>
+    </form>
+</div>
