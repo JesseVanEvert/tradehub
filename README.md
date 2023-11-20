@@ -34,16 +34,20 @@ Before you can run Trade Hub, make sure you have the following dependencies inst
    ```bash
    npm install
 
+3. Install composer dependencies in a terminal in the backend project
+   ```bash
+   composer install
+
 ### Starting the backend
 
-3. To start the PHP backend, open a terminal in the api directory and run the following command:
+4. To start the PHP backend, open a terminal in the api directory and run the following command:
    ```bash
    docker-compose up
 
  This will start a development server, and the API will be available at http://localhost:8000.
 
 ### Starting the frontend
-4. To start the Angular frontend, open a terminal in the frontend directory and run the following command:
+5. To start the Angular frontend, open a terminal in the frontend directory and run the following command:
   ```bash
   ng serve
   ```
